@@ -9,14 +9,14 @@ option(UBSAN "Enable undefined behaviour sanitizer" ON)
 
 if(CMAKE_BUILD_TYPE MATCHES "Release")
 
-  # Enable link-time optimization if supported.
-  include(CheckIPOSupported)
-  check_ipo_supported(RESULT ipo_supported OUTPUT ipo_check_output)
-  if(ipo_supported)
-    set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
-  else()
-    message(WARNING "LTO is not supported: ${ipo_check_output}\n")
-  endif()
+ # Enable link-time optimization if supported.
+ # include(CheckIPOSupported)
+ # check_ipo_supported(RESULT ipo_supported OUTPUT ipo_check_output)
+ # if(ipo_supported)
+ #   set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+ # else()
+ #   message(WARNING "LTO is not supported: ${ipo_check_output}\n")
+ # endif()
 
   set(ASAN OFF)
   set(UBSAN OFF)
